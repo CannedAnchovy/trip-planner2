@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import Header from './Header';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import { Button } from 'semantic-ui-react'
+import { Icon } from 'semantic-ui-react';
+import '../../semantic/dist/semantic.min.css';
 
 const reducer = () => {};
 const store = createStore(reducer);
@@ -12,7 +14,10 @@ class TripPlannerApp extends Component {
     return (
       <Provider store={store}>
         <BrowserRouter>
-          <Button>Click Here</Button>
+          <div>
+            <Header />
+            <Icon name="home"/>
+          </div>
         </BrowserRouter>
       </Provider>
     );
@@ -21,23 +26,4 @@ class TripPlannerApp extends Component {
 
 export default TripPlannerApp;
 
-import React, { Component } from 'react';
-import Header from './Header';
-import { Icon } from 'semantic-ui-react';
 
-class TripPlannerApp extends Component {
-  constructor() {
-    super();
-  }
-
-  render() {
-    return (
-      <div>
-        <Header />
-        <Icon name="home"/>
-      </div>
-    );
-  }
-}
-
-export default TripPlannerApp;

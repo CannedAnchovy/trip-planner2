@@ -21,12 +21,12 @@ const Header = (props) => {
       <Link to="newJourney" className="headerButton">
         <div>新的旅程</div>
       </Link>
-      <Link to="search" className="headerButton"> 
+      <Link to="search" className="headerButton">
         <div >搜尋</div>
       </Link>
-      
-      
-      
+
+
+
     </div>
     );
 };
