@@ -1,7 +1,0 @@
-{
-  "parser": "babel-eslint",
-  "extends": "google",
-  "rules": {
-    "strict": 0
-  }
-}

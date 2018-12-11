@@ -1,17 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { BrowserRouter } from 'react-router-dom';
-import TripPlannerApp from './components/js/TripPlannerApp';
+import '../semantic/dist/semantic.min.css'
+import TripPlannerApp from './component/TripPlannerApp';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-    <BrowserRouter>
-      <TripPlannerApp />
-    </BrowserRouter>,  
-    document.getElementById('root'));
+  <TripPlannerApp />,
+  document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+serviceWorker.register();
