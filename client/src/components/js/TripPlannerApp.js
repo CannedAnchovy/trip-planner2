@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import Header from './Header';
+import { Icon } from 'semantic-ui-react';
 
 class TripPlannerApp extends Component {
   constructor() {
@@ -9,7 +10,8 @@ class TripPlannerApp extends Component {
   render() {
     return (
       <div>
-        hello!
+        <Header />
+        <Icon name="home"/>
       </div>
     );
   }
