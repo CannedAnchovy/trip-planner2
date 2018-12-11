@@ -1,11 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import TripPlannerApp from './component/js/TripPlannerApp';
 import * as serviceWorker from './serviceWorker';
+import './semantic/dist/semantic.min.css';
+
+const reducer = () => {};
+const store = createStore(reducer);
 
 ReactDOM.render(
-  <TripPlannerApp />,
+  <Provider store={store}>
+    <BrowserRouter>
+      <TripPlannerApp />
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 );
 

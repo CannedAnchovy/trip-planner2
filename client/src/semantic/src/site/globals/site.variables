@@ -2,4 +2,8 @@
      User Global Variables
 *******************************/
 
-@primaryColor: @pink;
+@primaryColor: @green;
+@secondaryColor: @grey;
+@green: #C4E0A5;
+@grey: #757575;
+@black: #404040;
