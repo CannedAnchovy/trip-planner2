@@ -25,10 +25,10 @@ const Header = () => {
           </Menu.Item>
           <Dropdown className="headerButton" item icon="user" direction="left">
             <Dropdown.Menu>
-              <Dropdown.Item>
+              <Dropdown.Item as={Link} name="personalPage" to="/personalPage">
                 <div className="headerButtonText">個人頁面</div>
               </Dropdown.Item>
-              <Dropdown.Item>
+              <Dropdown.Item as={Link} name="settings" to="/settings">
                 <div className="headerButtonText">設定</div>
               </Dropdown.Item>
               <Dropdown.Item>
