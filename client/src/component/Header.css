@@ -1,0 +1,26 @@
+.Header {
+    width: 100%;
+    height: 8vh;
+    background-color: #DCEDC8;
+}
+
+.logo {
+    height: 7vh;
+}
+
+.headerButton {
+    width: 10%;
+    height: 8vh;
+    float: right;
+    line-height: 8vh;
+    text-decoration: none;
+    color: #333333;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.userButton {
+    width: 5%;
+    height: 8vh;
+    float: right;
+}
