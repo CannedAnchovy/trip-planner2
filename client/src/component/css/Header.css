@@ -4,19 +4,30 @@
 }
 
 #logo {
+  top: 0;
   width: 450px;
   height: 80px;
   cursor: pointer;
 }
 
 .headerButton {
-  text-align: center;
-  margin-right: 10px;
   font-size: 1.8rem;
+  text-align: center;
 }
 
 .headerButtonText {
   font-weight: 600;
+  color: #404040;
+}
+
+.dropdownItem {
+  text-align: center;
+}
+
+.dropdownItemText {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 400;
   color: #404040;
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Dropdown, Icon, Menu } from 'semantic-ui-react'
+import { Dropdown, Menu } from 'semantic-ui-react'
 import '../css/Header.css'
 
 const logoUrl = require("../img/logo.png");
@@ -14,7 +14,7 @@ const Header = () => {
         </Menu.Item>
 
         <Menu.Menu position='right'>
-          <Menu.Item className="headerButton" as={Link} name="user" to="/user">
+          <Menu.Item className="headerButton" as={Link} name="planner" to="/planner">
             <div className="headerButtonText">搜尋</div>
           </Menu.Item>
           <Menu.Item className="headerButton"as={Link} name="newJourney" to="/newJourney">
@@ -25,14 +25,14 @@ const Header = () => {
           </Menu.Item>
           <Dropdown className="headerButton" item icon="user" direction="left">
             <Dropdown.Menu>
-              <Dropdown.Item as={Link} name="personalPage" to="/personalPage">
-                <div className="headerButtonText">個人頁面</div>
+              <Dropdown.Item className="dropdownItem" as={Link} name="personalPage" to="/personalPage">
+                <div className="dropdownItemText">個人頁面</div>
               </Dropdown.Item>
-              <Dropdown.Item as={Link} name="settings" to="/settings">
-                <div className="headerButtonText">設定</div>
+              <Dropdown.Item className="dropdownItem" as={Link} name="settings" to="/settings">
+                <div className="dropdownItemText">設定</div>
               </Dropdown.Item>
-              <Dropdown.Item>
-                <div className="headerButtonText">登出</div>
+              <Dropdown.Item className="dropdownItem">
+                <div className="dropdownItemText">登出</div>
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
