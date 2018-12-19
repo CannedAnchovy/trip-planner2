@@ -46,7 +46,7 @@ const options = [
   { key: 2, text: '人生好難之旅', value: 2 },
   { key: 3, text: '好想放假之旅', value: 3 },
 ]
-
+/*
 const panes = [
   { menuItem: (
       <Menu.Item style={styles.menuItem}>
@@ -68,7 +68,7 @@ const panes = [
     index: 0,
   },
 ]
-
+*/
 
 
 class Schedule extends Component {
@@ -83,15 +83,7 @@ class Schedule extends Component {
   }
 
   componentWillMount() {
-    panes.push({
-      menuItem: (
-        <Button 
-          icon="plus"
-          onClick={this.handleAddTab}
-          style={styles.menuItem}
-        />
-      ),
-    });
+    
   }
 
   handleTabChange(e, { activeIndex }) {
@@ -99,42 +91,70 @@ class Schedule extends Component {
   }
 
   handleAddTab() {
-    panes.splice(this.state.days);
-    panes.push({
-      menuItem: (
-        <Menu.Item style={styles.menuItem}>
-        <b className="menuItemDay">{`第 ${this.state.days+1} 天`}</b>
-        <Icon
-          name="close"
-          style={styles.closeTab}
-          size="small"
-        />
-      </Menu.Item>
-      ),
-      render: () => {
-        return(
-          <Tab.Pane style={styles.tabPane}>
-            This is {this.state.days} day's schedule!!
-          </Tab.Pane>
-        );
-      },
-    });
-    panes.push({
-      menuItem: (
-        <Button 
-          icon="plus"
-          onClick={this.handleAddTab}
-          style={styles.menuItem}
-        />
-      ),
-    });
     this.setState({
       activeIndex: this.state.days,
       days: this.state.days + 1,
     });
   }
 
+  handleDeleteTab() {
+    if (this.state.days === 1)  return;
+    //const newActiveIndex = (this.state.activeIndex === this.state.days - 1)? (this.state.activeIndex - 1):this.state.activeIndex ;
+    //console.log(newActiveIndex);
+    this.setState({
+      //activeIndex: newActiveIndex,
+      days: this.state.days - 1,
+    });
+    
+  }
+
+  
+
   render() {
+    console.log(this.state.activeIndex);
+    if (this.state.activeIndex === this.state.days) {
+      this.setState({
+        activeIndex: this.state.activeIndex - 1,
+      });
+    }
+    const panes = [];
+    for ( let i = 0; i < this.state.days; i = i + 1 ) {
+      let closeTabIcon = <div/>;
+      if (this.state.activeIndex === i) {
+        closeTabIcon = (
+          <Icon
+              name="close"
+              style={styles.closeTab}
+              size="small"
+              onClick={(i) => {this.handleDeleteTab(i);}}
+            />
+        );
+      }
+      panes.push({
+        menuItem: (
+          <Menu.Item key={i} style={styles.menuItem}>
+            <b className="menuItemDay">{`第 ${i+1} 天`}</b>
+            {closeTabIcon}
+          </Menu.Item>
+        ),
+        render: () => {
+          return(
+            <Tab.Pane style={styles.tabPane}>
+            </Tab.Pane>
+          );
+        },
+      });
+    }
+    panes.push({
+      menuItem: (
+        <Button 
+          key={this.state.days}
+          icon="plus"
+          onClick={this.handleAddTab}
+          style={styles.menuItem}
+        />
+      ),
+    });
     return (
       <div className="schedule">
         <Grid
@@ -166,6 +186,8 @@ class Schedule extends Component {
           className="mainSchedule"
           panes={panes}
           styles={styles.tab}
+          activeIndex={this.state.activeIndex}
+          onTabChange={this.handleTabChange}
         />
         <Grid 
           className="editButton"

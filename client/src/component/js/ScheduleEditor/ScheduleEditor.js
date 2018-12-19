@@ -35,8 +35,6 @@ class ScheduleEditor extends Component {
           <Sidebar
             animation='overlay'
             icon='labeled'
-            inverted
-            vertical
             visible={this.state.visible}
             style={{width:"92%",backgroundColor:"#EDEDED"}}
           >
