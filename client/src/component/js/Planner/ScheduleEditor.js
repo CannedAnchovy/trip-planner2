@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import { Segment, Sidebar, Button } from 'semantic-ui-react'
 import Schedule from './Schedule';
-import '../../css/ScheduleEditor.css'
+import '../../css/Planner/ScheduleEditor.css'
 
+const style = {
+  sidebarPushable: {
+
+  }
+}
 
 class ScheduleEditor extends Component {
   constructor() {
@@ -15,11 +20,11 @@ class ScheduleEditor extends Component {
 
     handleHideClick = () => this.setState({ visible: false })
     handleShowClick = () => this.setState({ visible: true })
-  
+
     render() {
     let pullButtonPosition, clickAction, clickIcon;
     if(this.state.visible) {
-      pullButtonPosition = {left:'92%'};
+      pullButtonPosition = {left:'38%'};
       clickAction = this.handleHideClick;
       clickIcon = "left double angle";
     } else {
@@ -28,26 +33,26 @@ class ScheduleEditor extends Component {
       clickIcon = "right double angle";
     }
     console.log(pullButtonPosition);
-    
+
     return (
         <div className="scheduleEditor">
-        <Sidebar.Pushable as={Segment} style={{margin:"0",}}>
-          <Sidebar
-            animation='overlay'
-            icon='labeled'
-            visible={this.state.visible}
-            style={{width:"92%",backgroundColor:"#EDEDED"}}
-          >
-          <Schedule />
-          </Sidebar>
-        </Sidebar.Pushable>
-        <Button.Group
-          className="pullEditor"
-          style={pullButtonPosition}
-          vertical
-        >
-          <Button onClick={clickAction} icon={clickIcon}/>
-        </Button.Group>
+          <Sidebar.Pushable style={{margin:"0",}}>
+            <Sidebar
+              animation='overlay'
+              icon='labeled'
+              visible={this.state.visible}
+              style={{width:"38%",backgroundColor:"#EDEDED"}}
+            >
+            <Schedule />
+            </Sidebar>
+            <Button.Group
+              className="pullEditor"
+              style={pullButtonPosition}
+              vertical
+            >
+              <Button onClick={clickAction} icon={clickIcon}/>
+            </Button.Group>
+          </Sidebar.Pushable>
         </div>
     );
   }

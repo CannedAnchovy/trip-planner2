@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Dropdown, Button, Tab, Menu, Icon } from 'semantic-ui-react'
-import '../../css/Schedule.css'
+import '../../css/Planner/Schedule.css'
 
 const styles = {
   grid: {
@@ -83,7 +83,7 @@ class Schedule extends Component {
   }
 
   componentWillMount() {
-    
+
   }
 
   handleTabChange(e, { activeIndex }) {
@@ -105,10 +105,10 @@ class Schedule extends Component {
       //activeIndex: newActiveIndex,
       days: this.state.days - 1,
     });
-    
+
   }
 
-  
+
 
   render() {
     console.log(this.state.activeIndex);
@@ -147,7 +147,7 @@ class Schedule extends Component {
     }
     panes.push({
       menuItem: (
-        <Button 
+        <Button
           key={this.state.days}
           icon="plus"
           onClick={this.handleAddTab}
@@ -159,9 +159,9 @@ class Schedule extends Component {
       <div className="schedule">
         <Grid
           className="scheduleInfo"
-          columns={3} 
-          verticalAlign='middle' 
-          textAlign='center' 
+          columns={3}
+          verticalAlign='middle'
+          textAlign='center'
           style={styles.grid}
         >
           <Grid.Row>
@@ -189,7 +189,7 @@ class Schedule extends Component {
           activeIndex={this.state.activeIndex}
           onTabChange={this.handleTabChange}
         />
-        <Grid 
+        <Grid
           className="editButton"
           textAlign='center'
           style={styles.grid}
@@ -202,7 +202,7 @@ class Schedule extends Component {
               <Button secondary size="big">輸出行程</Button>
             </Grid.Column>
           </Grid.Row>
-        </Grid>         
+        </Grid>
       </div>
     );
   }
