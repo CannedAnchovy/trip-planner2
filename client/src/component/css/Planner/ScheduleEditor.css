@@ -1,11 +1,11 @@
-.scheduleEditor {
-    position: absolute;
+.sidebar {
+    position: relative;
     width: 100%;
     height: 100%;
-    background-color: #FFFFFF;
 }
 
 .pullEditor {
     position: absolute;
     top: 0;
+    z-index: 200;
 }

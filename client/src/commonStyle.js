@@ -8,12 +8,13 @@ export default {
   black: '#3C3C3C',
   grey: '#747574',
   lightGrey: '#BABABA',
+  ultraLightGrey: '#EEEEEE',
 
   // font-size
-  headerSize: '1.5rem',
-  subHeaderSize: '1.4rem',
-  bodySize: '1.2rem',
-  noteSize: '1rem',
+  headerSize: '1.4rem',
+  subHeaderSize: '1.2rem',
+  bodySize: '1rem',
+  noteSize: '0.9rem',
   buttonTextSize: '1.3rem',
 
   // font-family
