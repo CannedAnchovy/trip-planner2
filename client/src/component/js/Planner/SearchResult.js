@@ -19,9 +19,9 @@ const style = {
   },
   img: {
     width: '21%',
-    height: '102%',
+    height: '105%',
     marginLeft: '2%',
-    marginTop: '%',
+    marginTop: 0,
     display: 'inline-block'
   },
   title: {

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Sidebar, Input, Pagination } from 'semantic-ui-react'
 import SearchResult from './SearchResult';
 import Button from '../Button';
+import TagGenre from './TagGenre';
 import Common from '../../../commonStyle';
 
 const style = {
@@ -14,6 +15,20 @@ const style = {
     position: 'absolute',
     width: '38%',
     height: '100%',
+  },
+  leftPanel: {
+    position: 'relative',
+    width: '84%',
+    height: '87%',
+    margin: '6% 3% 0% 13%',
+    padding: '5%',
+    border: '1px solid rgba(34,36,38,.15)',
+    borderRadius: '5px',
+  },
+  tagTitle: {
+    color: Common.grey,
+    fontSize: Common.headerSize,
+    fontWeight: 600,
   },
   rightPanelContainer: {
     position: 'absolute',
@@ -36,7 +51,7 @@ const style = {
     width: '70%',
   },
   buttonGroup: {
-    marginTop: '7px',
+    marginTop: '3px',
     marginRight: '2.5%',
     float: 'right',
   },
@@ -101,10 +116,60 @@ class Reader extends Component {
       imgUrl: require('../../img/3-4.jpg')
     }
   ];
-
+    const genre = [
+      {
+        name: '景點類型',
+        tags: [
+          '自然風景',
+          '人文古蹟',
+          '美食小吃'
+        ],
+      },
+      {
+        name: '旅伴類型',
+        tags: [
+          '朋友',
+          '家人',
+          '伴侶',
+          '單獨'
+        ],
+      },
+      {
+        name: '其他分類',
+        tags: [
+          '我是分類',
+          '分類',
+          '這也是分類',
+          '換行會長這樣',
+          '繼續分類',
+          '我是分類之王'
+        ],
+      },
+      {
+        name: '景點類型',
+        tags: [
+          '自然風景',
+          '人文古蹟',
+          '美食小吃'
+        ],
+      },
+      {
+        name: '旅伴類型',
+        tags: [
+          '朋友',
+          '家人',
+          '伴侶',
+          '單獨'
+        ],
+      }
+    ]
     return (
       <Sidebar.Pusher className="reader" >
         <div className="leftPanelContainer" style={style.leftPanelContainer}>
+          <div className="leftPanel" style={style.leftPanel}>
+            <div style={style.tagTitle}>標籤篩選</div>
+            {genre.map((g) => <TagGenre genre={g} />)}
+          </div>
         </div>
         <div className="rightPanelContainer" style={style.rightPanelContainer}>
           <div className="rightPanel" style={style.rightPanel}>
