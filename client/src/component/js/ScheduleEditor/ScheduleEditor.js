@@ -7,30 +7,33 @@ import '../../css/ScheduleEditor.css'
 class ScheduleEditor extends Component {
   constructor() {
     super();
-    this.state = { visible: true, show: false,}
+    this.state = {
+      visible: true,
+      show: false,
+    }
 
     this.handleHideClick = this.handleHideClick.bind(this);
     this.handleShowClick = this.handleShowClick.bind(this);
   }
 
-    handleHideClick = () => this.setState({ visible: false })
-    handleShowClick = () => this.setState({ visible: true })
+  handleHideClick = () => this.setState({ visible: false })
+  handleShowClick = () => this.setState({ visible: true })
   
-    render() {
-    let pullButtonPosition, clickAction, clickIcon;
-    if(this.state.visible) {
-      pullButtonPosition = {left:'92%'};
-      clickAction = this.handleHideClick;
-      clickIcon = "left double angle";
-    } else {
-      pullButtonPosition = {left:'0%'};
-      clickAction = this.handleShowClick;
-      clickIcon = "right double angle";
-    }
-    console.log(pullButtonPosition);
-    
-    return (
-        <div className="scheduleEditor">
+  render() {
+  let pullButtonPosition, clickAction, clickIcon;
+  if(this.state.visible) {
+    pullButtonPosition = {left:'92%'};
+    clickAction = this.handleHideClick;
+    clickIcon = "left double angle";
+  } else {
+    pullButtonPosition = {left:'0%'};
+    clickAction = this.handleShowClick;
+    clickIcon = "right double angle";
+  }
+  console.log(pullButtonPosition);
+  
+  return (
+      <div className="scheduleEditor">
         <Sidebar.Pushable as={Segment} style={{margin:"0",}}>
           <Sidebar
             animation='overlay'
@@ -48,9 +51,9 @@ class ScheduleEditor extends Component {
         >
           <Button onClick={clickAction} icon={clickIcon}/>
         </Button.Group>
-        </div>
-    );
-  }
+      </div>
+  );
+}
 }
 
 export default ScheduleEditor;

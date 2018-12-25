@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Dropdown, Button, Tab, Menu, Icon } from 'semantic-ui-react'
-import '../../css/Schedule.css'
+import AttractionInSchedule from './AttractionInSchedule';
+import '../../css/Schedule.css';
 
 const styles = {
   grid: {
@@ -26,6 +27,8 @@ const styles = {
   tabPane: {
     fontSize: '2em',
     height: '90%',
+    overflow: 'scroll',
+    overflowX: 'hidden',
   },
   menuItem: {
     padding: '15px',
@@ -38,6 +41,16 @@ const styles = {
   editButton: {
     padding:'0px',
     width:'30%',
+  },
+  addButton: {
+    backgroundColor: '#BABABA',
+    borderRadius: '50%',
+    width: '4vw',
+    height: '4vw',
+    fontSize: '25px',
+    color: 'white',
+    position: 'absolute',
+    zIndex: '5',
   }
 }
 
@@ -46,29 +59,9 @@ const options = [
   { key: 2, text: '人生好難之旅', value: 2 },
   { key: 3, text: '好想放假之旅', value: 3 },
 ]
-/*
-const panes = [
-  { menuItem: (
-      <Menu.Item style={styles.menuItem}>
-        <b className="menuItemDay">第 1 天</b>
-        <Icon
-          name="close"
-          style={styles.closeTab}
-          size="small"
-        />
-      </Menu.Item>
-    ),
-    render: () => {
-      return(
-        <Tab.Pane style={styles.tabPane}>
-          This is 1st day's schedule!!
-        </Tab.Pane>
-      );
-    },
-    index: 0,
-  },
-]
-*/
+
+const data = require("../../schedule.json");
+const schedule = data.schedule;
 
 
 class Schedule extends Component {
@@ -80,6 +73,7 @@ class Schedule extends Component {
     }
     this.handleTabChange = this.handleTabChange.bind(this);
     this.handleAddTab = this.handleAddTab.bind(this);
+    this.handleModeChange = this.handleModeChange.bind(this);
   }
 
   componentWillMount() {
@@ -99,22 +93,25 @@ class Schedule extends Component {
 
   handleDeleteTab() {
     if (this.state.days === 1)  return;
-    //const newActiveIndex = (this.state.activeIndex === this.state.days - 1)? (this.state.activeIndex - 1):this.state.activeIndex ;
-    //console.log(newActiveIndex);
     this.setState({
-      //activeIndex: newActiveIndex,
       days: this.state.days - 1,
     });
     
   }
 
-  
+  handleModeChange() {
+    const newMode = (this.state.mode === 'edit')? 'readOnly':'edit';
+    this.setState({
+      mode: newMode,
+    });
+  }
 
   render() {
-    console.log(this.state.activeIndex);
+    console.log(data);
     if (this.state.activeIndex === this.state.days) {
       this.setState({
         activeIndex: this.state.activeIndex - 1,
+        mode: 'readOnly',
       });
     }
     const panes = [];
@@ -123,11 +120,11 @@ class Schedule extends Component {
       if (this.state.activeIndex === i) {
         closeTabIcon = (
           <Icon
-              name="close"
-              style={styles.closeTab}
-              size="small"
-              onClick={(i) => {this.handleDeleteTab(i);}}
-            />
+            name="close"
+            style={styles.closeTab}
+            size="small"
+            onClick={(i) => {this.handleDeleteTab(i);}}
+          />
         );
       }
       panes.push({
@@ -140,6 +137,19 @@ class Schedule extends Component {
         render: () => {
           return(
             <Tab.Pane style={styles.tabPane}>
+              {schedule.map(attraction => (
+                <AttractionInSchedule
+                  key={attraction.id}
+                  mode={this.state.mode}
+                  attractionInfo={attraction}
+                />
+              ))}
+              <div className="addAttractionInSchedule">
+                <Button
+                  icon="plus"
+                  style={styles.addButton}
+                />
+              </div>
             </Tab.Pane>
           );
         },
@@ -155,6 +165,8 @@ class Schedule extends Component {
         />
       ),
     });
+    let modeButton = (this.state.mode === 'edit')? '我要儲存':'我要編輯';
+    //console.log(lineTop);
     return (
       <div className="schedule">
         <Grid
@@ -196,13 +208,19 @@ class Schedule extends Component {
         >
           <Grid.Row>
             <Grid.Column style={styles.editButton}>
-              <Button secondary size="big">我要編輯</Button>
+              <Button
+                secondary
+                size="big"
+                onClick={this.handleModeChange}
+              >{modeButton}</Button>
             </Grid.Column>
             <Grid.Column style={styles.editButton}>
               <Button secondary size="big">輸出行程</Button>
             </Grid.Column>
           </Grid.Row>
-        </Grid>         
+        </Grid>
+        <div className="schedule-line"></div>
+        <div className="schedule-white"></div>
       </div>
     );
   }

@@ -1,0 +1,36 @@
+.attractionInSchedule {
+    width: 100%;
+    min-height: 20%;
+    margin: 0% 0% 3% 0%;
+    overflow: visible;
+}
+
+.attraction-input {
+    outline: none;
+    border: none;
+    width: 100%;
+}
+
+#title {
+    font-weight: bold;
+}
+
+#memo {
+    padding: 0;
+}
+
+#traffic {
+    background-color: #BABABA;
+    color: white;
+    padding: 0;
+}
+
+::placeholder {
+    font-weight: normal;
+}
+
+/*
+::-webkit-scrollbar {
+    display: none;
+}
+*/
