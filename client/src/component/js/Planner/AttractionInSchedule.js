@@ -18,7 +18,7 @@ const styles = {
     width: "85%",
   },
   attractionTitle: {
-    fontSize: Common.headerSize,
+    fontSize: Common.subHeaderSize,
     padding: "0 0 0 2%",
     fontWeight: "bold",
   },

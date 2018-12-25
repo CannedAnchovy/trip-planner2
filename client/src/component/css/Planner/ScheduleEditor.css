@@ -6,6 +6,6 @@
 
 .pullEditor {
     position: absolute;
-    top: 0;
-    z-index: 200;
+    top: 10vh;
+    z-index: 5;
 }

@@ -1,6 +1,5 @@
 .schedule {
-    width: 100%;
-    height: 100%;
+    height: 78%;
 }
 
 .scheduleInfo {
@@ -10,7 +9,7 @@
 
 .mainSchedule {
     width: 100%;
-    height: 78%;
+    height: 100%;
     padding: 0% 6%;
 }
 
