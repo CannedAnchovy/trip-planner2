@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import ScheduleEditor from './ScheduleEditor/ScheduleEditor';
+import { Route } from 'react-router-dom';
+import Planner from './Planner/Planner'
 import '../css/MainDisplay.css';
 
 class MainDisplay extends Component {
   render() {
     return (
         <div className="mainDisplay">
-          <ScheduleEditor />
+          <Route path='/planner' component={Planner} />
         </div>
     );
   }

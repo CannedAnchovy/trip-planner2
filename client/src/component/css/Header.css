@@ -1,27 +1,30 @@
-#header {
-  height: 80px;
-  background-color: #C4E0A5;
+.header {
+  position: relative;
+  width: 100%;
+  height: 60px;
+}
+
+.headerMenu {
+  height: 100%;
 }
 
 #logo {
-  width: 450px;
-  height: 80px;
+  width: 300px;
+  height: 50px;
   cursor: pointer;
 }
 
 .headerButton {
   text-align: center;
   margin-right: 10px;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 
 .headerButtonText {
   font-weight: 600;
-  color: #404040;
 }
 
-.userButton {
-  width: 5%;
-  height: 8vh;
-  float: right;
+.headerDropdownText {
+  font-weight: 400;
+  font-size: 1.2rem;
 }

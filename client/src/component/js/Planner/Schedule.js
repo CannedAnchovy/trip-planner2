@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Grid, Dropdown, Button, Tab, Menu, Icon } from 'semantic-ui-react'
 import AttractionInSchedule from './AttractionInSchedule';
-import '../../css/Schedule.css';
+import '../../css/Planner/Schedule.css'
+import Common from '../../../commonStyle';
 
 const styles = {
   grid: {
@@ -16,7 +17,7 @@ const styles = {
     width:'22%',
   },
   dropdown: {
-    fontSize:'1.5em',
+    fontSize: Common.headerSize,
     width: '80%',
     backgroundColor: '#EDEDED',
     borderWidth: '0px 0px 3px 0px',
@@ -32,7 +33,7 @@ const styles = {
   },
   menuItem: {
     padding: '15px',
-    fontSize: '1.3em'
+    fontSize: '1.3em',
   },
   closeTab: {
     margin: '0px',
@@ -45,11 +46,12 @@ const styles = {
   addButton: {
     backgroundColor: '#BABABA',
     borderRadius: '50%',
-    width: '4vw',
-    height: '4vw',
-    fontSize: '25px',
+    width: '4.3vw',
+    height: '4.3vw',
+    fontSize: '1.2rem',
     color: 'white',
     position: 'absolute',
+    left: '2vw',
     zIndex: '5',
   }
 }
@@ -77,7 +79,7 @@ class Schedule extends Component {
   }
 
   componentWillMount() {
-    
+
   }
 
   handleTabChange(e, { activeIndex }) {
@@ -96,7 +98,7 @@ class Schedule extends Component {
     this.setState({
       days: this.state.days - 1,
     });
-    
+
   }
 
   handleModeChange() {
@@ -157,7 +159,7 @@ class Schedule extends Component {
     }
     panes.push({
       menuItem: (
-        <Button 
+        <Button
           key={this.state.days}
           icon="plus"
           onClick={this.handleAddTab}
@@ -171,9 +173,9 @@ class Schedule extends Component {
       <div className="schedule">
         <Grid
           className="scheduleInfo"
-          columns={3} 
-          verticalAlign='middle' 
-          textAlign='center' 
+          columns={3}
+          verticalAlign='middle'
+          textAlign='center'
           style={styles.grid}
         >
           <Grid.Row>
@@ -187,10 +189,10 @@ class Schedule extends Component {
               />
             </Grid.Column>
             <Grid.Column style={styles.gridColButton}>
-              <Button secondary size="big">旅遊資訊</Button>
+              <Button secondary >旅遊資訊</Button>
             </Grid.Column>
             <Grid.Column style={styles.gridColButton}>
-              <Button secondary size="big">地圖</Button>
+              <Button secondary >地圖</Button>
             </Grid.Column>
           </Grid.Row>
         </Grid>
@@ -201,7 +203,7 @@ class Schedule extends Component {
           activeIndex={this.state.activeIndex}
           onTabChange={this.handleTabChange}
         />
-        <Grid 
+        <Grid
           className="editButton"
           textAlign='center'
           style={styles.grid}
@@ -210,17 +212,17 @@ class Schedule extends Component {
             <Grid.Column style={styles.editButton}>
               <Button
                 secondary
-                size="big"
                 onClick={this.handleModeChange}
               >{modeButton}</Button>
             </Grid.Column>
             <Grid.Column style={styles.editButton}>
-              <Button secondary size="big">輸出行程</Button>
+              <Button secondary >輸出行程</Button>
             </Grid.Column>
           </Grid.Row>
         </Grid>
         <div className="schedule-line"></div>
-        <div className="schedule-white"></div>
+        <div className="schedule-white" id="top"></div>
+        <div className="schedule-white" id="bottom"></div>
       </div>
     );
   }

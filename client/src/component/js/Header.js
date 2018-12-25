@@ -1,38 +1,50 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Dropdown, Icon, Menu } from 'semantic-ui-react'
+import { Dropdown, Menu } from 'semantic-ui-react'
 import '../css/Header.css'
+import Common from '../../commonStyle';
 
 const logoUrl = require("../img/logo.png");
+const style = {
+  menu: {
+    backgroundColor: Common.green,
+  },
+  text: {
+    color: Common.black,
+  },
+  dropdown: {
+    margin: 0,
+  }
+}
 
 const Header = () => {
   return (
-    <div>
-      <Menu id="header" attached='top' secondary>
+    <div className="header">
+      <Menu className="headerMenu" style={style.menu} attached='top' secondary>
         <Menu.Item className="headerButton" disabled as={ Link } name="Trip Planner" to="/">
             <img id="logo" src={logoUrl} alt="logo" />
         </Menu.Item>
 
         <Menu.Menu position='right'>
-          <Menu.Item className="headerButton" as={Link} name="user" to="/user">
-            <div className="headerButtonText">搜尋</div>
+          <Menu.Item className="headerButton" as={Link} name="user" to="/planner">
+            <div className="headerButtonText" style={style.text}>搜尋</div>
           </Menu.Item>
           <Menu.Item className="headerButton"as={Link} name="newJourney" to="/newJourney">
-            <div className="headerButtonText">新的旅程</div>
+            <div className="headerButtonText" style={style.text}>新的旅程</div>
           </Menu.Item>
           <Menu.Item className="headerButton" as={Link} name="aboutUs" to="/aboutUs">
-            <div className="headerButtonText">關於我們</div>
+            <div className="headerButtonText" style={style.text}>關於我們</div>
           </Menu.Item>
-          <Dropdown className="headerButton" item icon="user" direction="left">
+          <Dropdown id="userDropdown" className="headerButton" style={style.dropdown} item icon="user" direction="left">
             <Dropdown.Menu>
               <Dropdown.Item as={Link} name="personalPage" to="/personalPage">
-                <div className="headerButtonText">個人頁面</div>
+                <div className="headerDropdownText" style={style.text}>個人頁面</div>
               </Dropdown.Item>
               <Dropdown.Item as={Link} name="settings" to="/settings">
-                <div className="headerButtonText">設定</div>
+                <div className="headerDropdownText" style={style.text}>設定</div>
               </Dropdown.Item>
               <Dropdown.Item>
-                <div className="headerButtonText">登出</div>
+                <div className="headerDropdownText" style={style.text}>登出</div>
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
@@ -41,29 +53,5 @@ const Header = () => {
     </div>
   );
 }
-
-/* const Header = () => {
-  return (
-    <div className="Header">
-      <img
-        className="logo"
-        src={logoUrl}
-        alt="logo"
-      />
-      <Link to="/user" className="userButton">
-        <Icon name="home"/>
-      </Link>
-      <Link to="aboutUs" className="headerButton">
-        <div>關於我們</div>
-      </Link>
-      <Link to="newJourney" className="headerButton">
-        <div>新的旅程</div>
-      </Link>
-      <Link to="search" className="headerButton">
-        <div>搜尋</div>
-      </Link>
-    </div>
-  );
-};*/
 
 export default Header;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Image, TextArea } from 'semantic-ui-react';
-import '../../css/AttractionInSchedule.css';
-
+import '../../css/Planner/AttractionInSchedule.css';
+import Common from '../../../commonStyle';
 
 const styles = {
   grid: {
@@ -18,16 +18,16 @@ const styles = {
     width: "85%",
   },
   attractionTitle: {
-    fontSize: "0.7em",
+    fontSize: Common.headerSize,
     padding: "0 0 0 2%",
     fontWeight: "bold",
   },
   attractionMemo: {
-    fontSize: "0.6em",
+    fontSize: Common.bodySize,
     padding: "10px 0 0 2%",
   },
   attractionTraffic: {
-    fontSize: "0.6em",
+    fontSize: Common.bodySize,
     margin: "3% 0 0 0",
     padding: "2%",
     backgroundColor: "#BABABA",

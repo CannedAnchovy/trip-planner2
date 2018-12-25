@@ -1,0 +1,11 @@
+.sidebar {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.pullEditor {
+    position: absolute;
+    top: 0;
+    z-index: 200;
+}

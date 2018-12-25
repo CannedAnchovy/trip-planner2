@@ -28,18 +28,29 @@
     background-color: #BABABA;
     width: 3px;
     position: absolute;
-    top: 160px;
-    bottom: 160px;
-    left: 16%;
+    top: 20vh;
+    bottom: 12vh;
+    left: 17%;
     z-index: 1;
 }
 
 .schedule-white {
     position: absolute;
-    top: 158px;
     width: 80%;
     height: 28px;
     background-color: white;
     z-index: 10;
     left:10%;
+}
+
+.addAttractionInSchedule {
+    height: 4.3vw;
+}
+
+.schedule-white#top {
+    top: 17.3vh;
+}
+
+.schedule-white#bottom {
+    top: 78.5vh;
 }
