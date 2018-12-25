@@ -6,12 +6,11 @@ const style = {
   searchResult: {
     position: 'relative',
     width: '100%',
-    height: '22%',
+    height: '26%',
     margin: '2% 0%',
     padding: '1em 1em',
     boxShadow: 'none',
-    borderWidth: '2px',
-    borderColor: Common.ultraLightGrey,
+    border: '1px solid rgba(34,36,38,.15)',
   },
   textArea: {
     width: '77%',
@@ -20,8 +19,9 @@ const style = {
   },
   img: {
     width: '21%',
-    height: '98%',
+    height: '102%',
     marginLeft: '2%',
+    marginTop: '%',
     display: 'inline-block'
   },
   title: {
