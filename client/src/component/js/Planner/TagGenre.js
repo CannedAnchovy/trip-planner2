@@ -22,12 +22,21 @@ const style = {
 }
 
 const TagGenre = (props) => {
+
   return (
     <div className="tagGenre" style={style.tagGenre}>
       <div className="genre" style={style.genre}>{props.genre.name}</div>
       <div className="tagGroup" style={style.tagGroup}>
         {props.genre.tags.map((tag, index) => {
-          return <Button primary active={index%2===0}>{tag}</Button>;
+          let selected = props.tags.includes(tag);
+          return <Button
+            key={`tag-${index}-${tag}`}
+            primary
+            active={selected}
+            onClick={() => props.onClick(tag, (selected)? 'delete' : 'add')}
+          >
+          {tag}
+          </Button>;
         })}
       </div>
     </div>

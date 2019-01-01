@@ -3,13 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import { reducer } from './reducer/Reducer'
 import { BrowserRouter } from 'react-router-dom';
 import TripPlannerApp from './component/js/TripPlannerApp';
 import * as serviceWorker from './serviceWorker';
 import './semantic/dist/semantic.min.css';
 
-const reducer = () => {};
 const store = createStore(reducer);
+
+store.subscribe(() => {
+  console.log('State: ');
+  console.log(store.getState());
+});
 
 ReactDOM.render(
   <Provider store={store}>

@@ -96,6 +96,27 @@ const SearchResult = (props) => {
         <img className="resultImg" src={data.imgUrl} style={style.img} alt="resultImg"/>
       </Segment>
     )
+  } else if (data.type === 'attraction')  {
+    return (
+      <Segment className="searchResult" style={style.searchResult}>
+        <div className="textArea" style={style.textArea}>
+          <div className="title" style={style.title}>{data.title}</div>
+          <div className="subTitle" style={style.subTitle}>
+            <Icon name="map marker alternate" />{data.user}
+          </div>
+          <div className="body" style={style.body}>
+            {data.body} ...... (<span className="link" style={style.link}>閱讀全文</span>)
+          </div>
+          <div className="action" style={style.action}>
+            <Icon className="actionIcon" name="heart" style={style.actionIcon}/>{data.likeNum}
+          </div>
+          <div className="action" style={style.action}>
+            <Icon className="actionIcon" name="diamond" style={style.actionIcon}/>{data.buyNum}
+          </div>
+        </div>
+        <img className="resultImg" src={data.imgUrl} style={style.img} alt="resultImg"/>
+      </Segment>
+    )
   }
 }
 

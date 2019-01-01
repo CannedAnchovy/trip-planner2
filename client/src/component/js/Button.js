@@ -22,7 +22,13 @@ const style = {
 }
 
 const MyButton = (props) => {
-  return <Button size='small' style={(props.active)? style.primaryActive : style.primary} onclick={props.onClick}>{props.children}</Button>;
+  return <Button
+    size='small'
+    style={(props.active)? style.primaryActive : style.primary}
+    onClick={props.onClick}
+  >
+  {props.children}
+  </Button>;
 }
 
 export default MyButton;
