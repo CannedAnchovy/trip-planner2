@@ -24,7 +24,7 @@ const styles = {
     lineHeight: "5vh",
   },
   listTitle: {
-    width: "50%",
+    width: "48%",
     fontSize: Common.subHeaderSize,
     float: "left",
     fontWeight: "bold",
@@ -37,10 +37,10 @@ const iconUrl = require("../../img/restaurant.png");
 class AttractionList extends Component {
   constructor() {
     super();
-    
+
   }
 
-  
+
 
   render() {
     return (
@@ -66,7 +66,7 @@ class AttractionList extends Component {
                   <Button
                     size="mini"
                     style={styles.button}
-                  >加入行程</Button>          
+                  >加入行程</Button>
                   <Button
                     size="mini"
                     style={styles.button}
@@ -88,7 +88,7 @@ class AttractionList extends Component {
                   <Button
                     size="mini"
                     style={styles.button}
-                  >加入行程</Button>          
+                  >加入行程</Button>
                   <Button
                     size="mini"
                     style={styles.button}
@@ -110,7 +110,7 @@ class AttractionList extends Component {
                   <Button
                     size="mini"
                     style={styles.button}
-                  >加入行程</Button>          
+                  >加入行程</Button>
                   <Button
                     size="mini"
                     style={styles.button}
