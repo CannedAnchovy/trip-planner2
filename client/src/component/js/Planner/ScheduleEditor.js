@@ -67,6 +67,7 @@ class ScheduleEditor extends Component {
       show: false,
       page: 'schedule',
       mode: 'readOnly',
+      data: [],
     }
 
     this.handleHideClick = this.handleHideClick.bind(this);
@@ -75,24 +76,37 @@ class ScheduleEditor extends Component {
     this.handlePageChange = this.handlePageChange.bind(this);
   }
 
-    handleHideClick = () => this.setState({ visible: false })
-    handleShowClick = () => this.setState({ visible: true })
-
-
-    handleModeChange() {
-      const newMode = (this.state.mode === 'edit')? 'readOnly':'edit';
-      this.setState({
-        mode: newMode,
+  componentWillMount() {
+    /*
+    fetch('planner/getData')
+      .then((res) => (res.json(res)))
+      .then((res) => {
+        this.setState({
+          data: res.data,
+        });
       });
-    }
+    */
+  }
 
-    handlePageChange(newPage) {
-      this.setState({
-        page: newPage,
-      })
-    }
 
-    render() {
+  handleHideClick = () => this.setState({ visible: false })
+  handleShowClick = () => this.setState({ visible: true })
+
+  handleModeChange() {
+    const newMode = (this.state.mode === 'edit')? 'readOnly':'edit';
+    this.setState({
+      mode: newMode,
+    });
+  }
+
+  handlePageChange(newPage) {
+    this.setState({
+      page: newPage,
+    })
+  }
+
+  render() {
+    console.log(this.state.data);
     let buttonStyle = {
       schedule: styles.pullEditorButtonUnselect,
       list: styles.pullEditorButtonUnselect,

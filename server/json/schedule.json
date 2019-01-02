@@ -145,6 +145,172 @@
       ],
       "comments": [
         {
+          "id": 0,
+          "user": "Joanne",
+          "content": "可以不要很早起床嗎？",
+          "replies": [
+            {
+              "id": 0,
+              "name": "user2",
+              "content": "可以阿！"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "user": "Joanne",
+          "content": "聽說德田商旅很可怕欸真的要住這裡嗎？",
+          "replies": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "tripTitle": "日本3日遊",
+      "schedule": [
+        {
+          "day": 1,
+          "attractions": [
+            {
+              "id": 0,
+              "type": "restaurant",
+              "title": "台大牛奶",
+              "memo": "記得要很早去排隊不然會被阿公阿罵搶光光！",
+              "traffic": "腳踏車沿著舟山路騎"
+            },
+            {
+              "id": 1,
+              "type": "attraction",
+              "title": "總圖",
+              "memo": "總圖很美喔！",
+              "traffic": "就在旁邊"
+            },
+            {
+              "id": 2,
+              "type": "restaurant",
+              "title": "活大",
+              "memo": "這裡有麵包店、麥當勞、自助餐跟樂法還有全家",
+              "traffic": "腳踏車5分鐘"
+            },
+            {
+              "id": 3,
+              "type": "attraction",
+              "title": "醉月湖",
+              "memo": "小心蚊子QQ",
+              "traffic": "腳踏車10分鐘"
+            },
+            {
+              "id": 4,
+              "type": "attraction",
+              "title": "管院大草皮",
+              "memo": "會有幼稚園小朋友出沒！",
+              "traffic": "腳踏車5分鐘"
+            },
+            {
+              "id": 5,
+              "type": "hotel",
+              "title": "德田商旅",
+              "memo": "浴室只有淋浴，提供強大wi-fi，可參觀PTT機房！盥洗用具請自備",
+              "traffic": "附有腳踏車停車位"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "attractions": [
+            {
+              "id": 0,
+              "type": "restuarant",
+              "title": "女九早餐",
+              "memo": "樓下有全家，全家就是你家",
+              "traffic": "走路拉"
+            },
+            {
+              "id": 1,
+              "type": "attraction",
+              "title": "新體",
+              "memo": "也可以順便去凝態物理看看（？）還有後台咖啡",
+              "traffic": "走路"
+            },
+            {
+              "id": 2,
+              "type": "attraction",
+              "title": "椰林大道",
+              "memo": "可以拍照",
+              "traffic": "走路"
+            },
+            {
+              "id": 3,
+              "type": "restaurant",
+              "title": "小木屋鬆餅",
+              "memo": "很好吃 旁邊有原點",
+              "traffic": "走路"
+            },
+            {
+              "id": 4,
+              "type": "attraction",
+              "title": "鹿鳴堂",
+              "memo": "他的7-11不見了QQQQ",
+              "traffic": "走路"
+            },
+            {
+              "id": 5,
+              "type": "attraction",
+              "title": "二活",
+              "memo": "樓下有subway好吃",
+              "traffic": "走路"
+            }
+          ]
+        }
+      ],
+      "favoriteList": [
+        {
+          "id": 0,
+          "type": "restuarant",
+          "title": "女九早餐",
+          "like": 5
+        },
+        {
+          "id": 1,
+          "type": "attraction",
+          "title": "新體",
+          "like": 3
+        },
+        {
+          "id": 2,
+          "type": "attraction",
+          "title": "椰林大道",
+          "like": 4
+        },
+        {
+          "id": 3,
+          "type": "restaurant",
+          "title": "小木屋鬆餅",
+          "like": 5
+        },
+        {
+          "id": 4,
+          "type": "attraction",
+          "title": "鹿鳴堂",
+          "like": 1
+        },
+        {
+          "id": 5,
+          "type": "attraction",
+          "title": "二活",
+          "like": 0
+        },
+        {
+          "id": 6,
+          "type": "attraction",
+          "title": "正大國際會議廳",
+          "like": 0
+        }
+      ],
+      "comments": [
+        {
           "user": "Joanne",
           "content": "可以不要很早起床嗎？",
           "replies": [
@@ -158,31 +324,11 @@
           "user": "Joanne",
           "content": "聽說德田商旅很可怕欸真的要住這裡嗎？",
           "replies": [
-            
+
           ]
         }
       ]
-    },
-    {
-      "id": 0,
-      "type": "restaurant",
-      "title": "記憶吐司專賣店",
-      "memo": "吃了就可以把計網計結全部背起來，期末起飛！吃了就可以把計網計結全部背起來，期末起飛！",
-      "traffic": "這裡要怎麼去教我拜託~"
-    },
-    {
-      "id": 1,
-      "type": "attraction",
-      "title": "不用寫作業的地方叫天堂",
-      "memo": "崩潰崩潰崩潰崩潰崩潰全世界都崩潰超級崩潰想出去玩嗚嗚嗚",
-      "traffic": "到底為什麼這裡的編輯mode會多3px!!!!!!!"
-    },
-    {
-      "id": 2,
-      "type": "hotel",
-      "title": "一覺睡到自然醒過來",
-      "memo": "不想早起上班",
-      "traffic": "到底為什麼這裡的編輯mode會多3px!!!!!!!"
     }
+    
   ]
 }
