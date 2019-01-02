@@ -4,19 +4,26 @@ import { Grid, Dropdown, Button, Tab, Menu, Icon, Message } from 'semantic-ui-re
 //import '../../css/Planner/AttractionList.css'
 import Common from '../../../commonStyle';
 
-const styles = {
+const style = {
+  img: {
+    marginTop: '0px',
+    marginLeft: '10px',
+    width: '380px',
+    height: '490px',
+  }
 }
 
 
 class MessageBoard extends Component {
   constructor() {
     super();
-    
+
   }
 
-  
+
 
   render() {
+    const imgUrl = require('../../img/messageboard.png');
     return (
       <div className="schedule">
         <div className="mainSchedule">
@@ -24,7 +31,8 @@ class MessageBoard extends Component {
             <div className="attractionList-title">
               旅行留言板
             </div>
-          </div>    
+            <img src={imgUrl} style={style.img} alt="hi" />
+          </div>
         </div>
       </div>
     );
