@@ -57,7 +57,7 @@ class AttractionList extends Component {
                   style={styles.icon}
                 />
                 <List.Content style={styles.listContent}>
-                  <div style={styles.listTitle}>小木屋鬆餅</div>
+                  <div style={styles.listTitle}>東京鐵塔</div>
                   <Button
                     icon="like"
                     content="6"
@@ -79,7 +79,7 @@ class AttractionList extends Component {
                   style={styles.icon}
                 />
                 <List.Content style={styles.listContent}>
-                  <div style={styles.listTitle}>小木屋鬆餅</div>
+                  <div style={styles.listTitle}>淺草寺</div>
                   <Button
                     icon="like"
                     content="6"
@@ -101,7 +101,7 @@ class AttractionList extends Component {
                   style={styles.icon}
                 />
                 <List.Content style={styles.listContent}>
-                  <div style={styles.listTitle}>小木屋鬆餅</div>
+                  <div style={styles.listTitle}二重橋></div>
                   <Button
                     icon="like"
                     content="6"

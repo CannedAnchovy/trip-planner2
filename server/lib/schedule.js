@@ -23,7 +23,7 @@ router.use(_bodyParser2.default.json());
 
 router.get('planner/getData', function (req, res) {
   console.log('I am getting data');
-  res.send(data);
+  res.json(data);
 });
 
 exports.default = router;
