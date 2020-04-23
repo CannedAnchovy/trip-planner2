@@ -7,6 +7,9 @@
     "node": "13.13.0"
   },
   "dependencies": {
+    "graceful-fs": {
+      "version": "4.2.3"
+    },
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-redux": "^6.0.0",
