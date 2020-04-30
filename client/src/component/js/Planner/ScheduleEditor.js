@@ -125,7 +125,7 @@ class ScheduleEditor extends Component {
       buttonStyle.messageBoard = styles.pullEditorButtonSelect;
     }
     let buttonGroup;
-    if(this.state.visible) {
+    if (this.state.visible) {
       buttonGroup = (
         <Button.Group
           className="pullEditor"

@@ -1,7 +1,7 @@
 .attractionInSchedule {
     width: 100%;
     min-height: 20%;
-    margin: 0% 0% 3% 0%;
+    margin: 0;
     overflow: visible;
 }
 
@@ -11,7 +11,7 @@
     width: 100%;
 }
 
-#title {
+/* #title {
     font-weight: bold;
 }
 
@@ -23,7 +23,7 @@
     background-color: #BABABA;
     color: white;
     padding: 0;
-}
+} */
 
 ::placeholder {
     font-weight: normal;

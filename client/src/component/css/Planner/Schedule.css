@@ -26,17 +26,14 @@
 .schedule-line {
     background-color: #BABABA;
     width: 3px;
-    position: absolute;
-    top: 20vh;
-    bottom: 12vh;
-    left: 17%;
+    margin-left: 30.26px;
     z-index: 1;
 }
 
 .schedule-white {
     position: absolute;
     width: 80%;
-    height: 28px;
+    height: 26px;
     background-color: white;
     z-index: 10;
     left:10%;

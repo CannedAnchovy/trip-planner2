@@ -101,7 +101,7 @@ class AttractionList extends Component {
                   style={styles.icon}
                 />
                 <List.Content style={styles.listContent}>
-                  <div style={styles.listTitle}二重橋></div>
+                  <div style={styles.listTitle}>二重橋</div>
                   <Button
                     icon="like"
                     content="6"

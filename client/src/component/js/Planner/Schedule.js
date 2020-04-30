@@ -137,16 +137,18 @@ class Schedule extends Component {
         },
       });
     }
-    panes.push({
-      menuItem: (
-        <Button
-          key={this.state.days}
-          icon="plus"
-          onClick={this.handleAddTab}
-          style={styles.addDayButton}
-        />
-      ),
-    });
+    if ( this.props.mode === 'edit' ) {
+      panes.push({
+        menuItem: (
+          <Button
+            key={this.state.days}
+            icon="plus"
+            onClick={this.handleAddTab}
+            style={styles.addDayButton}
+          />
+        ),
+      });
+    }
     //console.log(lineTop);
     return (
       <div className="schedule">
@@ -159,9 +161,9 @@ class Schedule extends Component {
           onTabChange={this.handleTabChange}
         />
         
-        <div className="schedule-line"></div>
-        <div className="schedule-white" id="top"></div>
-        <div className="schedule-white" id="bottom"></div>
+        
+        {/* <div className="schedule-white" id="top"></div>
+        <div className="schedule-white" id="bottom"></div> */}
       </div>
     );
   }

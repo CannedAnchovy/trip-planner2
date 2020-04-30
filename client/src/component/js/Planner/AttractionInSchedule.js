@@ -14,32 +14,32 @@ const styles = {
     zIndex: '5',
   },
   attractionContent: {
-    padding: "1% 5%",
+    padding: "5px 25px",
     width: "85%",
+    // backgroundColor: "#BBBBBB",
   },
   attractionTitle: {
     fontSize: Common.subHeaderSize,
     padding: "0 0 0 2%",
     fontWeight: "bold",
+    // backgroundColor: "#BABABA",
   },
   attractionMemo: {
     fontSize: Common.bodySize,
     padding: "10px 0 0 2%",
+    lineHeight: "1.4285em",
+    // backgroundColor: "#BABABA",
   },
   attractionTraffic: {
     fontSize: Common.bodySize,
-    margin: "3% 0 0 0",
-    padding: "2%",
+    margin: "5px 0 0 0",
+    padding: "5px",
     backgroundColor: "#BABABA",
     color: "white",
     borderRadius: "10px",
+    lineHeight: "1.4285em",
   },
 }
-
-const mode = 'edit';
-//const mode = 'readOnly';
-const iconUrl = require("../../img/restaurant.png");
-
 
 
 class Schedule extends Component {
@@ -47,21 +47,25 @@ class Schedule extends Component {
     super();
     this.state = {
       attractionInfo: {
+        id: 0,
         title: '',
         memo: '',
         traffic: '',
-      }
+      },
+      scheduleLineHeight: 0,
     }
-
+    this.refs = React.createRef();
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleMemoChange = this.handleMemoChange.bind(this);
     this.handleTrafficChange = this.handleTrafficChange.bind(this);
+    this.scheduleLineHeightChange = this.scheduleLineHeightChange.bind(this);
   }
 
   componentWillMount() {
     //console.log(this.props.attractionInfo);
     this.setState({
       attractionInfo: {
+        id: this.props.attractionInfo.id,
         title: this.props.attractionInfo.title,
         memo: this.props.attractionInfo.memo,
         traffic: this.props.attractionInfo.traffic,
@@ -69,13 +73,25 @@ class Schedule extends Component {
     });
   }
 
+  componentDidMount() {
+    const height = this.scheduleLineHeightChange();
+    this.setState({
+      attractionInfo: this.state.attractionInfo,
+      scheduleLineHeight: height
+    });
+    // console.log(this.state.scheduleLineHeight);
+  }
+
+  
+
   handleTitleChange(e) {
     this.setState({
       attractionInfo: {
         title: e.target.value,
         memo: this.state.attractionInfo.memo,
         traffic: this.state.attractionInfo.traffic,
-      }
+      },
+      scheduleLineHeight: this.state.scheduleLineHeight
     });
   }
 
@@ -85,7 +101,8 @@ class Schedule extends Component {
         title: this.state.attractionInfo.title,
         memo: e.target.value,
         traffic: this.state.attractionInfo.traffic,
-      }
+      },
+      scheduleLineHeight: this.scheduleLineHeightChange()
     });
   }
 
@@ -95,9 +112,18 @@ class Schedule extends Component {
         title: this.state.attractionInfo.title,
         memo: this.state.attractionInfo.memo,
         traffic: e.target.value,
-      }
+      },
+      scheduleLineHeight: this.scheduleLineHeightChange()
     });
   }
+
+  scheduleLineHeightChange() {
+    const attractionHeight = document.getElementById("attractionInSchedule" + this.state.attractionInfo.id).offsetHeight;
+    const attracitonIconHeight = document.getElementById("attractionIcon" + this.state.attractionInfo.id).offsetHeight;
+    
+    return attractionHeight - attracitonIconHeight;
+  }
+
 
   render() {
     const attractionInfo = this.state.attractionInfo;
@@ -106,9 +132,11 @@ class Schedule extends Component {
     let title, memo, traffic;
     if ( this.props.mode === 'edit' ) {
       title = (
-        <input
+        <TextArea
           id="title"
           className="attraction-input"
+          autoHeight
+          rows={1}
           placeholder="輸入景點名稱"
           value={attractionInfo.title}
           onChange={(e) => {this.handleTitleChange(e);}}
@@ -121,7 +149,7 @@ class Schedule extends Component {
           autoHeight
           placeholder="輸入備註"
           value={attractionInfo.memo}
-          rows={2}
+          rows={1}
           onChange={(e) => {this.handleMemoChange(e);}}
           style={styles.attractionMemo}
         />);
@@ -151,12 +179,13 @@ class Schedule extends Component {
           <span>{attractionInfo.traffic}</span>
         </Grid.Row>);
     }
-
+    
     return (
-      <div className="attractionInSchedule">
+      <div className="attractionInSchedule" id={"attractionInSchedule" + this.state.attractionInfo.id } ref={elem => this.refs = elem}>
         <Grid columns={2} style={styles.grid}>
           <Grid.Column style={styles.categroyIcon}>
-            <Image src={iconUrl}/>
+            <Image src={iconUrl} id={"attractionIcon" + this.state.attractionInfo.id }/>
+            <div className="schedule-line" id="schedule-line" style={{ height: this.state.scheduleLineHeight}}></div>
           </Grid.Column>
           <Grid.Column style={styles.attractionContent}>
               {title}
@@ -164,22 +193,11 @@ class Schedule extends Component {
               {traffic}
           </Grid.Column>
         </Grid>
+        
       </div>
+      
     );
   }
 }
 
 export default Schedule;
-
-
-/*
-<Grid.Row style={styles.attractionTitle}>
-              {title}
-            </Grid.Row>
-            <Grid.Row style={styles.attractionMemo}>
-              {memo}
-            </Grid.Row>
-            <Grid.Row style={styles.attractionTraffic}>
-              {traffic}
-            </Grid.Row>
-*/

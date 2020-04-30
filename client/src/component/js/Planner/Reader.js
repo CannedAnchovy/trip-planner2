@@ -278,7 +278,7 @@ class Reader extends Component {
     if (mode === 'searchJournal') array = results.journal;
     else if (mode === 'searchAttraction') array = results.attraction;
 
-    console.log(array);
+    // console.log(array);
     array = array.filter((element) => (element.title.includes(keyword) || element.subtitle.includes(keyword)));
     array = array.filter((element) => this.matchtags(element.tags, tags));
 
